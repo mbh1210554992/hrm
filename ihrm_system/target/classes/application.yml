@@ -1,0 +1,39 @@
+#服务配置
+server:
+  port: 9002
+#spring配置
+spring:
+  #1.应用配置
+  application:
+    name: ihrm-system #指定服务名
+  #2.数据库连接池
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ihrm?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+  #3.JPA
+  jpa:
+    database: MySQL
+    show-sql: true
+    open-in-view: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  redis:
+    host: 47.103.218.11
+    port: 6379
+  servlet:
+    multipart:
+      maxFileSize: -1
+      maxRequestSize: -1
+
+jwt:
+  config:
+    key: saas-ntu
+    ttl: 3600000
+
+#微服务注册到eureka配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka/
